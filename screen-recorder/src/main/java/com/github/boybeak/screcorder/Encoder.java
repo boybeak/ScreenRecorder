@@ -14,25 +14,24 @@
  * limitations under the License.
  */
 
-package net.yrom.screenrecorder;
+package com.github.boybeak.screcorder;
 
-import android.media.MediaFormat;
+import java.io.IOException;
 
 /**
  * @author yrom
- * @version 2017/12/3
+ * @version 2017/12/4
  */
-class AudioEncoder extends BaseEncoder {
-    private final AudioEncodeConfig mConfig;
+interface Encoder {
+    void prepare() throws IOException;
 
-    AudioEncoder(AudioEncodeConfig config) {
-        super(config.codecName);
-        this.mConfig = config;
+    void stop();
+
+    void release();
+
+    void setCallback(Callback callback);
+
+    interface Callback {
+        void onError(Encoder encoder, Exception exception);
     }
-
-    @Override
-    protected MediaFormat createMediaFormat() {
-        return mConfig.toFormat();
-    }
-
 }

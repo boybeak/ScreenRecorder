@@ -50,6 +50,11 @@ import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import com.github.boybeak.screcorder.AudioEncodeConfig;
+import com.github.boybeak.screcorder.ScreenRecorder;
+import com.github.boybeak.screcorder.Utils;
+import com.github.boybeak.screcorder.VideoEncodeConfig;
+
 import net.yrom.screenrecorder.view.NamedSpinner;
 
 import java.io.File;
@@ -63,8 +68,8 @@ import java.util.Locale;
 import static android.Manifest.permission.RECORD_AUDIO;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 import static android.os.Build.VERSION_CODES.M;
-import static net.yrom.screenrecorder.ScreenRecorder.AUDIO_AAC;
-import static net.yrom.screenrecorder.ScreenRecorder.VIDEO_AVC;
+import static com.github.boybeak.screcorder.ScreenRecorder.AUDIO_AAC;
+import static com.github.boybeak.screcorder.ScreenRecorder.VIDEO_AVC;
 
 public class MainActivity extends Activity {
     private static final int REQUEST_MEDIA_PROJECTION = 1;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.yrom.screenrecorder;
+package com.github.boybeak.screcorder;
 
 import android.media.MediaCodecInfo;
 import android.media.MediaCodecList;
@@ -26,10 +26,10 @@ import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.List;
 
-class Utils {
+public class Utils {
 
 
-    interface Callback {
+    public interface Callback {
         void onResult(MediaCodecInfo[] infos);
     }
 
@@ -51,7 +51,7 @@ class Utils {
         }
     }
 
-    static void findEncodersByTypeAsync(String mimeType, Callback callback) {
+    public static void findEncodersByTypeAsync(String mimeType, Callback callback) {
         new EncoderFinder(callback).execute(mimeType);
     }
 
@@ -60,7 +60,7 @@ class Utils {
      *
      * @return Returns empty array if not found any encoder supported specified MIME type
      */
-    static MediaCodecInfo[] findEncodersByType(String mimeType) {
+    public static MediaCodecInfo[] findEncodersByType(String mimeType) {
         MediaCodecList codecList = new MediaCodecList(MediaCodecList.ALL_CODECS);
         List<MediaCodecInfo> infos = new ArrayList<>();
         for (MediaCodecInfo info : codecList.getCodecInfos()) {
@@ -89,7 +89,7 @@ class Utils {
     /**
      * @param avcProfileLevel AVC CodecProfileLevel
      */
-    static String avcProfileLevelToString(MediaCodecInfo.CodecProfileLevel avcProfileLevel) {
+    public static String avcProfileLevelToString(MediaCodecInfo.CodecProfileLevel avcProfileLevel) {
         if (sAVCProfiles.size() == 0 || sAVCLevels.size() == 0) {
             initProfileLevels();
         }
@@ -113,7 +113,7 @@ class Utils {
         return profile + '-' + level;
     }
 
-    static String[] aacProfiles() {
+    public static String[] aacProfiles() {
         if (sAACProfiles.size() == 0) {
             initProfileLevels();
         }
@@ -124,7 +124,7 @@ class Utils {
         return profiles;
     }
 
-    static MediaCodecInfo.CodecProfileLevel toProfileLevel(String str) {
+    public static MediaCodecInfo.CodecProfileLevel toProfileLevel(String str) {
         if (sAVCProfiles.size() == 0 || sAVCLevels.size() == 0 || sAACProfiles.size() == 0) {
             initProfileLevels();
         }
@@ -203,7 +203,7 @@ class Utils {
 
     static SparseArray<String> sColorFormats = new SparseArray<>();
 
-    static String toHumanReadable(int colorFormat) {
+    public static String toHumanReadable(int colorFormat) {
         if (sColorFormats.size() == 0) {
             initColorFormatFields();
         }

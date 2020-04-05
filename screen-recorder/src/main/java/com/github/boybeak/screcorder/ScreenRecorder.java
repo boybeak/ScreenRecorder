@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.yrom.screenrecorder;
+package com.github.boybeak.screcorder;
 
 import android.hardware.display.VirtualDisplay;
 import android.media.MediaCodec;
@@ -42,8 +42,8 @@ public class ScreenRecorder {
     private static final String TAG = "ScreenRecorder";
     private static final boolean VERBOSE = false;
     private static final int INVALID_INDEX = -1;
-    static final String VIDEO_AVC = MIMETYPE_VIDEO_AVC; // H.264 Advanced Video Coding
-    static final String AUDIO_AAC = MIMETYPE_AUDIO_AAC; // H.264 Advanced Audio Coding
+    public static final String VIDEO_AVC = MIMETYPE_VIDEO_AVC; // H.264 Advanced Video Coding
+    public static final String AUDIO_AAC = MIMETYPE_AUDIO_AAC; // H.264 Advanced Audio Coding
     private String mDstPath;
     private VideoEncoder mVideoEncoder;
     private MicRecorder mAudioEncoder;
@@ -109,7 +109,7 @@ public class ScreenRecorder {
         return mDstPath;
     }
 
-    interface Callback {
+    public interface Callback {
         void onStop(Throwable error);
 
         void onStart();

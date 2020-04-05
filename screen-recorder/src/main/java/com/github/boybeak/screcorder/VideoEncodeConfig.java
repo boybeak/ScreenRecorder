@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.yrom.screenrecorder;
+package com.github.boybeak.screcorder;
 
 import android.media.MediaCodecInfo;
 import android.media.MediaFormat;
@@ -26,14 +26,14 @@ import java.util.Objects;
  * @version 2017/12/3
  */
 public class VideoEncodeConfig {
-    final int width;
-    final int height;
-    final int bitrate;
-    final int framerate;
-    final int iframeInterval;
-    final String codecName;
-    final String mimeType;
-    final MediaCodecInfo.CodecProfileLevel codecProfileLevel;
+    public final int width;
+    public final int height;
+    public final int bitrate;
+    public final int framerate;
+    public final int iframeInterval;
+    public final String codecName;
+    public final String mimeType;
+    public final MediaCodecInfo.CodecProfileLevel codecProfileLevel;
 
     /**
      * @param codecName         selected codec name, maybe null
