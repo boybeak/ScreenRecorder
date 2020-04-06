@@ -1,4 +1,13 @@
-Screen Recorder
+# Screen Recorder
+
+> Original library [yrom/ScreenRecorder](https://github.com/yrom/ScreenRecorder)
+
+## Install [ ![Download](https://api.bintray.com/packages/boybeak/nulldreams/screen-recorder/images/download.svg) ](https://bintray.com/boybeak/nulldreams/screen-recorder/_latestVersion)
+
+```groovy
+implementation 'com.github.boybeak:screen-recorder:$last_version'
+```
+
 =====
 这是个DEMO APP 主要是实现了屏幕录制功能（可同时录制来自麦克风的声音）。
 
